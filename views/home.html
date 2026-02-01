@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <main class="container">
+    <form class="contact-form">
+        <h2>Contact Form</h2>
+    
+        <div class="grid-container">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" name="job-title">
+            </div>
+             <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn URL</label>
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </div>
+
+        <div class="mid-grid">
+            <div class="form-group">
+                <label for="meet">How did we meet?</label>
+                <select id="meet" name="meet">
+                    <option value="">Please select</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label for="other">Other (please specify)</label>
+            <input type="text" id="other" name="other">
+        </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="mailing-list" name="mailing-list">
+            <label for="mailing-list">Please add me to your mailing list</label>
+        </div>
+
+        <div class="radio-group">
+            <span>Choose an email format:</span>
+            <input type="radio" id="html" name="format" value="html" checked>
+            <label for="html">HTML</label>
+            <input type="radio" id="text" name="format" value="text">
+            <label for="text">Text</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+        <!-- <h1>Contact Form</h1>
+        <form action="/submit" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="job-title" id="job-title" name="job-title" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input id="company" name="company"></input>
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn URL</label>
+                <input id="linkedin" name="linkedin"></input>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </form> -->
+    </main>
+</html>
