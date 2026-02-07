@@ -9,34 +9,25 @@
 </head>
 <body>
     <main class="container">
-    <form class="contact-form">
+    <form class="contact-form" id="guestbook-form">
         <h2>Contact Form</h2>
-    
+
         <div class="grid-container">
             <div class="form-group">
                 <label for="first-name">First Name</label>
                 <input type="text" id="first-name" name="first-name">
-            </div>
+                <span id="err-fname" class="err-msg"></span> </div>
             <div class="form-group">
                 <label for="last-name">Last Name</label>
                 <input type="text" id="last-name" name="last-name">
-            </div>
-            <div class="form-group">
-                <label for="job-title">Job Title</label>
-                <input type="text" id="job-title" name="job-title">
-            </div>
-             <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company">
-            </div>
+                <span id="err-lname" class="err-msg"></span> </div>
             <div class="form-group">
                 <label for="linkedin">LinkedIn URL</label>
                 <input type="text" id="linkedin" name="linkedin">
-            </div>
+                <span id="err-linkedin" class="err-msg"></span> </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email">
-            </div>
+                <input type="text" id="email" name="email"> <span id="err-email" class="err-msg"></span> </div>
         </div>
 
         <div class="mid-grid">
@@ -44,17 +35,14 @@
                 <label for="meet">How did we meet?</label>
                 <select id="meet" name="meet">
                     <option value="">Please select</option>
+                    <option value="meetup">Meetup</option>
+                    <option value="other">Other</option>
                 </select>
-        </div>
-        <div class="form-group">
-            <label for="other">Other (please specify)</label>
-            <input type="text" id="other" name="other">
-        </div>
-        </div>
-
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+                <span id="err-meet" class="err-msg"></span> </div>
+            <div class="form-group" id="other-specify-group" style="display: none;">
+                <label for="other">Other (please specify)</label>
+                <input type="text" id="other" name="other">
+            </div>
         </div>
 
         <div class="checkbox-group">
@@ -62,7 +50,7 @@
             <label for="mailing-list">Please add me to your mailing list</label>
         </div>
 
-        <div class="radio-group">
+        <div class="radio-group" id="format-group" style="display: none;">
             <span>Choose an email format:</span>
             <input type="radio" id="html" name="format" value="html" checked>
             <label for="html">HTML</label>
@@ -103,4 +91,6 @@
             <p>View my code on <a href="https://github.com/tonymythical/contact-form">GitHub</a></p>
         </footer>
     </main>
+    <script src="/js/script.js"></script>
+</body>
 </html>
