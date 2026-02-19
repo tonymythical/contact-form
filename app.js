@@ -15,15 +15,20 @@ app.get('/', (req, res) => {
 
 app.post('/submit', (req, res) => {
     const newEntry = {
-        name: req.body.name,
+        firstName: req.body['first-name'], 
+        lastName: req.body['last-name'],
         email: req.body.email,
-        message: req.body.message,
+        linkedIn: req.body.linkedin,
+        howWeMet: req.body.meet,
+        otherSpecify: req.body.other,
+        mailingList: req.body['mailing-list'] === 'on',
+        format: req.body.format,
         date: new Date().toLocaleString()
     };
 
     guestbookUsers.push(newEntry);
 
-    res.sendFile(`${import.meta.dirname}/views/index.html`);
+    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
 });
 
 app.get('/admin', (req, res) => {

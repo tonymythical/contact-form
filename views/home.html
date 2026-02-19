@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook</title>
-    <link rel="stylesheet" href="./../public/styles/style.css">
-    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
     <main class="container">
-    <form class="contact-form" id="guestbook-form">
+    <form class="contact-form" id="guestbook-form" action="/submit" method="POST">
         <h2>Contact Form</h2>
 
         <div class="grid-container">
             <div class="form-group">
                 <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name">
+                <input type="text" id="first-name" name="first-name" required>
                 <span id="err-fname" class="err-msg"></span> </div>
             <div class="form-group">
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name">
+                <input type="text" id="last-name" name="last-name" required>
                 <span id="err-lname" class="err-msg"></span> </div>
             <div class="form-group">
                 <label for="linkedin">LinkedIn URL</label>
