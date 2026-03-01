@@ -1,40 +1,46 @@
-import express from 'express';
+import express from "express";
+import path from "path";
 
 const app = express();
 const PORT = 3009;
 
-const guestbookUsers = [];
+app.set("view engine", "ejs");
 
-app.use(express.static('public'));
-
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+const guestbookUsers = [];
+
+app.get("/", (req, res) => {
+  res.render("home");
 });
 
-app.post('/submit', (req, res) => {
-    const newEntry = {
-        firstName: req.body['first-name'], 
-        lastName: req.body['last-name'],
-        email: req.body.email,
-        linkedIn: req.body.linkedin,
-        howWeMet: req.body.meet,
-        otherSpecify: req.body.other,
-        mailingList: req.body['mailing-list'] === 'on',
-        format: req.body.format,
-        date: new Date().toLocaleString()
-    };
-
-    guestbookUsers.push(newEntry);
-
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+app.get("/contact", (req, res) => {
+  res.render("contact");
 });
 
-app.get('/admin', (req, res) => {
-    res.json(guestbookUsers);
-})
+app.post("/submit", (req, res) => {
+  const newEntry = {
+    firstName: req.body["first-name"],
+    lastName: req.body["last-name"],
+    email: req.body.email,
+    linkedIn: req.body.linkedin,
+    howWeMet: req.body.meet,
+    otherSpecify: req.body.other,
+    mailingList: req.body["mailing-list"] === "on",
+    format: req.body.format || "N/A",
+    timestamp: new Date().toLocaleString()
+  };
+
+  guestbookUsers.push(newEntry);
+
+  res.render("confirmation", { user: newEntry });
+});
+
+app.get("/admin", (req, res) => {
+  res.render("admin", { users: guestbookUsers });
+});
 
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server: http://localhost:${PORT}`);
 });

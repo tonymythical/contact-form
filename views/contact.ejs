@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook</title>
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/styles/favicon.ico">
 </head>
 <body>
+    <%- include('partials/nav') %>
     <main class="container">
     <form class="contact-form" id="guestbook-form" action="/submit" method="POST">
         <h2>Contact Form</h2>
